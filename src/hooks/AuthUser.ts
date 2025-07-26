@@ -5,6 +5,8 @@ export const useAuth = () => {
   const user: User = JSON.parse(localStorage.getItem("userTapaszi") || "");
   const params = useParams();
   const userId = params.userId;
+  console.log(params, userId, user);
+
   return user.email && user.id.toString() === userId;
 };
 
