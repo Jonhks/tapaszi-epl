@@ -11,10 +11,10 @@
 }
 
 .containerApp {
-  background-image: url("../../public/fondo.jpeg");
+  background-image: url("https://s3.mx-central-1.amazonaws.com/portfolio.pool/sports/epl/home/back_home_epl.png");
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: right;
+  background-position: center;
   height: 100vh;
   overflow: scroll;
 }
