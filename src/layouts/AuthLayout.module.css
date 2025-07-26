@@ -1,0 +1,46 @@
+.container {
+  background-image: url("https://s3.mx-central-1.amazonaws.com/portfolio.pool/epl/login/log_in_girl_back.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 100%;
+  height: 100vh;
+  overflow: scroll;
+  display: flex;
+  justify-content: center;
+}
+
+.containerApp {
+  background-image: url("../../public/fondo.jpeg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: right;
+  height: 100vh;
+  overflow: scroll;
+}
+
+.containerHistory {
+  /* background-image: url("../assets/img/details-ball-sport.jpg"); */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100vh;
+  overflow: scroll;
+}
+
+.containerStats {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100vh;
+  overflow: scroll;
+}
+
+@media (width < 900px) {
+  .containerHistory {
+    background-position: right;
+  }
+  .containerStats {
+    background-position: left;
+  }
+}
