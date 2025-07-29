@@ -5,5 +5,26 @@
       "dest": "/",
       "status": 200
     }
+  ],
+  "rewrites": [
+    {
+      "source": "/epl/(.*)",
+      "destination": "/$1"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ],
+  "headers": [
+    {
+      "source": "/manifest.json",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "application/manifest+json"
+        }
+      ]
+    }
   ]
 }

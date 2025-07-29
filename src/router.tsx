@@ -34,22 +34,49 @@ const Router = () => {
   return (
     <BrowserRouter>
       <Routes>
+        {/* Ruta raíz para EPL standalone */}
+        <Route
+          path="/"
+          element={<Splash />}
+        />
+        {/* Ruta con userId para compatibilidad */}
         <Route
           path="/:userId"
           element={<Splash />}
         />
+        {/* Rutas EPL con prefijo */}
+        <Route
+          path="/epl/:userId"
+          element={<Splash />}
+        />
         <Route element={<SportsLayout ImgSports={ImgSports} />}>
+          <Route
+            path="/epl/sports/:userId"
+            element={<Sports />}
+          />
           <Route
             path="/sports/:userId"
             element={<Sports />}
           />
         </Route>
         <Route
+          path="/epl/wip/:userId"
+          element={<WIP />}
+        />
+        <Route
           path="/wip/:userId"
           element={<WIP />}
         />
 
         <Route element={<AppLayout />}>
+          <Route
+            path="/epl/home/:userId"
+            element={
+              <PrivateRoute>
+                <Home />
+              </PrivateRoute>
+            }
+          />
           <Route
             path="/home/:userId"
             element={
@@ -59,10 +86,28 @@ const Router = () => {
             }
           />
           <Route
+            path="/epl/myPortfolio/:userId"
+            element={
+              <PrivateRoute>
+                {/* <MyPortfolio /> */}
+                <WIP />
+              </PrivateRoute>
+            }
+          />
+          <Route
             path="/myPortfolio/:userId"
             element={
               <PrivateRoute>
                 {/* <MyPortfolio /> */}
+                <WIP />
+              </PrivateRoute>
+            }
+          />
+          <Route
+            path="/epl/instructions/:userId"
+            element={
+              <PrivateRoute>
+                {/* <Instructions /> */}
                 <WIP />
               </PrivateRoute>
             }
@@ -79,6 +124,14 @@ const Router = () => {
         </Route>
         <Route element={<HistoryLayout ImgHistory={ImgHistory} />}>
           <Route
+            path="/epl/history/:userId"
+            element={
+              <PrivateRoute>
+                <History />
+              </PrivateRoute>
+            }
+          />
+          <Route
             path="/history/:userId"
             element={
               <PrivateRoute>
@@ -88,6 +141,14 @@ const Router = () => {
           />
         </Route>
         <Route element={<StatsLayout />}>
+          <Route
+            path="/epl/stats/:userId"
+            element={
+              <PrivateRoute>
+                <Stats />
+              </PrivateRoute>
+            }
+          />
           <Route
             path="/stats/:userId"
             element={
